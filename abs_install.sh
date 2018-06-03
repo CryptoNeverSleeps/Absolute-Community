@@ -280,7 +280,7 @@ function install_sentinel() {
   virtualenv ./venv >/dev/null 2>&1  
   ./venv/bin/pip install -r requirements.txt >/dev/null 2>&1
   cd $ABSHOME
-  sed -i "s/18878/$SENTINELPORT/g" $ABSHOME/sentinel/test/unit/test_dash_config.py
+  sed -i "s/28889/$SENTINELPORT/g" $ABSHOME/sentinel/test/unit/test_absolute_config.py
   echo  "* * * * * cd $ABSHOME/sentinel && ./venv/bin/python bin/sentinel.py >> ~/sentinel.log 2>&1" > $ABSHOME/abs_cron
   chown -R $ABSUSER: $ABSHOME/sentinel >/dev/null 2>&1
   chown $ABSUSER: $ABSHOME/abs_cron
