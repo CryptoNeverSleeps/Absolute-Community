@@ -73,7 +73,7 @@ fi
 
 function prepare_system() {
 
-echo -e "Prepare the system to install Absolute master node."
+echo -e "Preparing the system to install Absolute Masternode."
 apt-get update >/dev/null 2>&1
 DEBIAN_FRONTEND=noninteractive apt-get update > /dev/null 2>&1
 DEBIAN_FRONTEND=noninteractive apt-get -o Dpkg::Options::="--force-confdef" -o Dpkg::Options::="--force-confold" -y -qq upgrade >/dev/null 2>&1
@@ -119,7 +119,7 @@ clear
 }
 
 function compile_node() {
-  echo -e "Download binaries. This may take some time. Press a key to continue."
+  echo -e "Downloading binaries. This may take some time."
   cd $TMP_FOLDER >/dev/null 2>&1
   wget -q $ABS_REPO >/dev/null 2>&1
   tar xvzf $COIN_ZIP --strip 1 >/dev/null 2>&1
@@ -273,7 +273,7 @@ EOF
 
 function install_sentinel() {
   SENTINELPORT=$[10001+$ABSPORT]
-  echo -e "${GREEN}Install sentinel.${NC}"
+  echo -e "${GREEN}Installing sentinel. Press ENTER to continue.${NC}"
   apt-get install virtualenv >/dev/null 2>&1
   git clone $SENTINEL_REPO $ABSHOME/sentinel >/dev/null 2>&1
   cd $ABSHOME/sentinel
