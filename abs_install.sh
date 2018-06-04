@@ -132,7 +132,7 @@ function compile_node() {
 }
 
 function enable_firewall() {
-  echo -e "Installing and etting up firewall to allow ingress on port ${GREEN}$ABSPORT${NC}"
+  echo -e "Installing and setting up firewall to allow ingress on port ${GREEN}$ABSPORT${NC}"
   ufw allow $ABSPORT/tcp comment "ABS MN port" >/dev/null
   ufw allow $[ABSPORT+1]/tcp comment "ABS RPC port" >/dev/null
   ufw allow ssh comment "SSH" >/dev/null 2>&1
@@ -283,8 +283,8 @@ function install_sentinel() {
   sed -i "s/28889/$SENTINELPORT/g" $ABSHOME/sentinel/test/unit/test_absolute_config.py
   echo  "* * * * * cd $ABSHOME/sentinel && ./venv/bin/python bin/sentinel.py >> ~/sentinel.log 2>&1" > $ABSHOME/abs_cron
   chown -R $ABSUSER: $ABSHOME/sentinel >/dev/null 2>&1
-  chown $ABSUSER: $ABSHOME/abs_cron
-  crontab -u $ABSUSER $ABSHOME/abs_cron
+  chown $ABSUSER: $ABSHOME/abs_cron >/dev/null 2>&1
+  crontab -u $ABSUSER $ABSHOME/abs_cron >/dev/null 2>&1
   rm abs_cron >/dev/null 2>&1
 }
 
