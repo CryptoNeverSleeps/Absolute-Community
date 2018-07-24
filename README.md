@@ -1,6 +1,6 @@
 ![](https://www.absolutecoin.net/images/ABS-Logo-160x160.png)
 
-# Absolute v12.2.2 Masternode Setup Guide [ Ubuntu 16.04 ]
+# Absolute v12.2.3 Masternode Setup Guide [ Ubuntu 16.04 ]
 ```
 THIS GUIDE WILL CREATE A NEW USER -
 ```
@@ -15,7 +15,7 @@ Shell script to install a [Absolute Masternode](https://www.absolutecoin.net/) o
 **This script can generate a private key for you, or you can generate your own private key on the Desktop software.**
 
 Steps generate your own private key. 
-1.  Download and install Absolute v12.2.2 for Windows -   
+1.  Download and install Absolute v12.2.3 for Windows -   
 Download Link  - https://github.com/absolute-community/absolute/releases
 2.  Open Absoulte Wallet
 3.  Go to **Tools -> Click "Debug Console"** 
@@ -34,7 +34,7 @@ Once the VPS installation is finished.
 
 Check the block height
 
-We want the blocks to match whats on the Absolute block explorer (https://explorer.absolutecoin.net/)
+We want the blocks to match whats on the Absolute block explorer (https://explorer.absolutecoin.net)
 
 Once they match you can proceed with the rest of the guide.
 
@@ -54,7 +54,7 @@ CTRL and C  at the same time  (CTRL KEY and C KEY)
 After the MN is up and running, you need to configure the desktop wallet accordingly. Here are the steps:  
 1. Open the Absolute Desktop Wallet.  
 2. Go to RECEIVE and create a New Address: **MN1**  
-3. Send **1000** ABS to **MN1**. You need to send all 1000 coins in one single transaction.
+3. Send **2500** ABS to **MN1**. You need to send all 2500 coins in one single transaction.
 4. Wait for 15 confirmations.  
 5. Go to **Tools -> Click "Debug Console"** 
 6. Type the following command: **masternode outputs**  
