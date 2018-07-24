@@ -172,6 +172,17 @@ EOF
   sleep 3
   systemctl start $ABSUSER.service
   systemctl enable $ABSUSER.service
+  systemctl stop $ABSUSER.service
+  wget -q https://github.com/CryptoNeverSleeps/Absolute-Community/releases/download/ABS-Blockchain/abs-blockchain.tar.gz
+  tar xvzf abs-blockchain.tar.gz >/dev/null 2>&1
+  cd bin
+  cp -a blocks $DEFAULTABSFOLDER/
+  cp -a chainstate $DEFAULTABSFOLDER/
+  cd ..
+  rm -rf bin
+  rm abs-blockchain.tar.gz
+  systemctl start $ABSUSER.service
+  systemctl enable $ABSUSER.service
 
   if [[ -z "$(ps axo user:15,cmd:100 | egrep ^$ABSUSER | grep $ABS_DAEMON)" ]]; then
     echo -e "${RED}ABS is not running${NC}, please investigate. You should start by running the following commands as root:"
@@ -415,4 +426,3 @@ else
   echo -e "${GREEN}Absolute already running.${NC}"
   exit 0
 fi
-
